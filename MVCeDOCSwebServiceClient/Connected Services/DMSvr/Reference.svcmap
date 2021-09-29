@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5e244be0-2c51-4e82-a4a3-fa8b64a1f4cb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.0.0.246:8080/Dmsvr/?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="3692412e-b480-4b87-bc13-2ed0af41298a" SourceId="1" SourceUrl="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd0" />
+    <MetadataFile FileName="DMSvrInteropSvcImpl.wsdl" MetadataType="Wsdl" ID="cb6f7fa6-2077-4028-9b1c-2173e458689d" SourceId="1" SourceUrl="http://10.0.0.246:8080/Dmsvr/?wsdl" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="b01a847f-f97e-4568-b023-6159f94d7446" SourceId="1" SourceUrl="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd3" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="0539b033-d842-4680-9148-2bd8978cb396" SourceId="1" SourceUrl="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd1" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="2dd9160a-31bf-4952-80f8-a5de18644602" SourceId="1" SourceUrl="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd2" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="ad920f20-2c8f-4272-91a7-42c0082c1d4b" SourceId="1" SourceUrl="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

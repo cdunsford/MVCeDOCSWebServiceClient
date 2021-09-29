@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://OpenText.DMSvr.InteropSvc" elementFormDefault="qualified" targetNamespace="http://OpenText.DMSvr.InteropSvc" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" />
+  <xs:element name="GetLoginLibraries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q1:GetLoginLibrariesCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoginLibrariesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetLoginLibrariesResult" nillable="true" type="q2:GetLoginLibrariesReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q3:SearchCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="SearchResult" nillable="true" type="q4:SearchReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecentDocs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q5:RecentDocsCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecentDocsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="RecentDocsResult" nillable="true" type="q6:RecentDocsReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q7:PutDocCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="PutDocResult" nillable="true" type="q8:PutDocReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q9:GetDocCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetDocResult" nillable="true" type="q10:GetDocReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q11:LookupCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="LookupResult" nillable="true" type="q12:LookupReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q13:SecureObjectCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="CreateObjectResult" nillable="true" type="q14:DocObjectReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q15:DocObjectCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="FetchObjectResult" nillable="true" type="q16:DocObjectReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q17:DocObjectCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="UpdateObjectResult" nillable="true" type="q18:DocObjectReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q19:DocObjectCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="DeleteObjectResult" nillable="true" type="q20:BaseReplyDescriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrustees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q21:DocObjectCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrusteesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetTrusteesResult" nillable="true" type="q22:SecureObjectReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTrustees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q23:SecureObjectCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTrusteesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="SetTrusteesResult" nillable="true" type="q24:BaseReplyDescriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocsForm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q25:GetFormCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocsFormResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetDocsFormResult" nillable="true" type="q26:GetFormReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginSvr2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q27:LoginCallSvr2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginSvr2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="LoginSvr2Result" nillable="true" type="q28:LoginReplySvr2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSvr2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q29:SearchCallSvr2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSvr2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="SearchSvr2Result" nillable="true" type="q30:SearchReplySvr2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecentDocsSvr2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q31:RecentDocsCallSvr2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecentDocsSvr2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="RecentDocsSvr2Result" nillable="true" type="q32:RecentDocsReplySvr2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNetwareServers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q33:GetNetwareServersCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNetwareServersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetNetwareServersResult" nillable="true" type="q34:NetwareServersReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSvr3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q35:SearchCallSvr3" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSvr3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="SearchSvr3Result" nillable="true" type="q36:SearchReplySvr3" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocSvr3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q37:GetDocCallSvr3" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocSvr3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetDocSvr3Result" nillable="true" type="q38:GetDocReplySvr3" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SQLService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q39:SQLServiceCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SQLServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="SQLServiceResult" nillable="true" type="q40:SQLServiceReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginSvr5">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q41:LoginCallSvr5" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginSvr5Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="LoginSvr5Result" nillable="true" type="q42:LoginReplySvr5" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NetworkInfoService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q43:NetworkInfoServiceCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NetworkInfoServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="NetworkInfoServiceResult" nillable="true" type="q44:NetworkInfoServiceReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginSvr6">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q45:LoginCallSvr6" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginSvr6Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="LoginSvr6Result" nillable="true" type="q46:LoginReplySvr6" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryIdleProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q47:QueryIdleProcessCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryIdleProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="QueryIdleProcessResult" nillable="true" type="q48:QueryIdleProcessReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServerList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q49:GetServerListCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServerListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetServerListResult" nillable="true" type="q50:GetServerListReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q51:GetClientParametersCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientParametersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetClientParametersResult" nillable="true" type="q52:GetClientParametersReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRowCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q53:GetRowCountCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRowCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetRowCountResult" nillable="true" type="q54:GetRowCountReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q55:GetDataCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetDataResult" nillable="true" type="q56:GetDataReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q57:ReleaseDataCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="ReleaseDataResult" nillable="true" type="q58:ReleaseDataReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaRowCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q59:GetMetaRowCountCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaRowCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetMetaRowCountResult" nillable="true" type="q60:GetMetaRowCountReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q61:GetMetaDataCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetMetaDataResult" nillable="true" type="q62:GetMetaDataReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataW">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q63:GetDataCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataWResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetDataWResult" nillable="true" type="q64:GetDataReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaDataW">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q65:GetMetaDataCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMetaDataWResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetMetaDataWResult" nillable="true" type="q66:GetMetaDataReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJsonData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q67:GetDataCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJsonDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetJsonDataResult" nillable="true" type="q68:GetJsonDataReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJsonMetaData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q69:GetMetaDataCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJsonMetaDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetJsonMetaDataResult" nillable="true" type="q70:GetJsonDataReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryContentFormats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q71:QueryContentFormatsCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryContentFormatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="QueryContentFormatsResult" nillable="true" type="q72:QueryContentFormatsReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRowContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q73:GetRowContentCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRowContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetRowContentResult" nillable="true" type="q74:GetRowContentReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUIMetaDataRowCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q75:GetUIMetaDataRowCountCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUIMetaDataRowCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetUIMetaDataRowCountResult" nillable="true" type="q76:GetUIMetaDataRowCountReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUIMetaData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q77:GetUIMetaDataCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUIMetaDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetUIMetaDataResult" nillable="true" type="q78:GetUIMetaDataReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUIMetaDataW">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q79:GetUIMetaDataCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUIMetaDataWResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetUIMetaDataWResult" nillable="true" type="q80:GetUIMetaDataReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StreamCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q81:StreamCountCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StreamCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="StreamCountResult" nillable="true" type="q82:StreamCountReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StreamClose">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q83:StreamCloseCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StreamCloseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="StreamCloseResult" nillable="true" type="q84:StreamCloseReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReadStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q85:GetReadStreamCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReadStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetReadStreamResult" nillable="true" type="q86:GetReadStreamReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWriteStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q87:GetWriteStreamCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWriteStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="GetWriteStreamResult" nillable="true" type="q88:GetWriteStreamReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCostInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q89:SaveCostInfoCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCostInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="SaveCostInfoResult" nillable="true" type="q90:SaveCostInfoReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q91:ReadStreamCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="ReadStreamResult" nillable="true" type="q92:ReadStreamReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q93:WriteStreamCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="WriteStreamResult" nillable="true" type="q94:WriteStreamReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeekStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q95:SeekStreamCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeekStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="SeekStreamResult" nillable="true" type="q96:SeekStreamReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q97:StatStreamCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="StatStreamResult" nillable="true" type="q98:StatStreamReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommitStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q99:CommitStreamCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CommitStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="CommitStreamResult" nillable="true" type="q100:StreamObjectReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewEnum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q101:NewEnumCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewEnumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="NewEnumResult" nillable="true" type="q102:NewEnumReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NextData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q103:NextDataCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NextDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="NextDataResult" nillable="true" type="q104:NextDataReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Skip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q105:SkipCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SkipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="SkipResult" nillable="true" type="q106:SkipReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q107:ResetCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="ResetResult" nillable="true" type="q108:ResetReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Clone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q109:CloneCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="CloneResult" nillable="true" type="q110:CloneReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="call" nillable="true" type="q111:ReleaseObjectCall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" minOccurs="0" name="ReleaseObjectResult" nillable="true" type="q112:ReleaseObjectReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

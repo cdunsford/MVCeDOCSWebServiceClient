@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" />
+  <xs:import schemaLocation="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GetLoginLibrariesCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetLoginLibrariesCall" nillable="true" type="tns:GetLoginLibrariesCall" />
+  <xs:complexType name="SecureCallDescriptor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dstIn" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecureCallDescriptor" nillable="true" type="tns:SecureCallDescriptor" />
+  <xs:complexType name="BaseCallDescriptor">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="extProperties" nillable="true" type="q1:NamedProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseCallDescriptor" nillable="true" type="tns:BaseCallDescriptor" />
+  <xs:complexType name="GetLoginLibrariesReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="libraries" nillable="true" type="q2:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetLoginLibrariesReply" nillable="true" type="tns:GetLoginLibrariesReply" />
+  <xs:complexType name="BaseReplyDescriptor">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="extProperties" nillable="true" type="q3:NamedProperties" />
+      <xs:element minOccurs="0" name="resultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseReplyDescriptor" nillable="true" type="tns:BaseReplyDescriptor" />
+  <xs:complexType name="DMSvrFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HRESULT" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DMSvrFault" nillable="true" type="tns:DMSvrFault" />
+  <xs:complexType name="SearchCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypedCallDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="signature" nillable="true" type="q4:SearchSignature" />
+          <xs:element minOccurs="0" name="requestedRows" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchCall" nillable="true" type="tns:SearchCall" />
+  <xs:complexType name="TypedCallDescriptor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="objectType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TypedCallDescriptor" nillable="true" type="tns:TypedCallDescriptor" />
+  <xs:complexType name="SearchReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultSetReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchReply" nillable="true" type="tns:SearchReply" />
+  <xs:complexType name="ResultSetReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="resultSetID" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="resultSetData" nillable="true" type="q5:ResultSetData">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="resultSetHResult" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="resultSetErrorMessage" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="resultSetMetadata" nillable="true" type="q6:ResultSetData">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="resultSetMetadataHResult" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="resultSetMetadataErrorMessage" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultSetReply" nillable="true" type="tns:ResultSetReply" />
+  <xs:complexType name="RecentDocsCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypedCallDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="signature" nillable="true" type="q7:SearchSignature" />
+          <xs:element minOccurs="0" name="requestedRows" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RecentDocsCall" nillable="true" type="tns:RecentDocsCall" />
+  <xs:complexType name="RecentDocsReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultSetReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RecentDocsReply" nillable="true" type="tns:RecentDocsReply" />
+  <xs:complexType name="PutDocCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="libraryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="documentNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="versionID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PutDocCall" nillable="true" type="tns:PutDocCall" />
+  <xs:complexType name="PutDocReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="docProperties" nillable="true" type="q8:NamedProperties" />
+          <xs:element minOccurs="0" name="putDocID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PutDocReply" nillable="true" type="tns:PutDocReply" />
+  <xs:complexType name="GetDocCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="libraryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="documentNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="versionID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDocCall" nillable="true" type="tns:GetDocCall" />
+  <xs:complexType name="GetDocReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="versionFileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="docApplication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="getDocID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDocReply" nillable="true" type="tns:GetDocReply" />
+  <xs:complexType name="LookupCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SingleLibraryCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="formID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lookupID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="targetProperty" nillable="true" type="xs:string" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="criteria" nillable="true" type="q9:SearchCriteria" />
+          <xs:element minOccurs="0" name="maxRows" type="xs:int" />
+          <xs:element minOccurs="0" name="requestedRows" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LookupCall" nillable="true" type="tns:LookupCall" />
+  <xs:complexType name="SingleLibraryCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="libraryName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleLibraryCall" nillable="true" type="tns:SingleLibraryCall" />
+  <xs:complexType name="LookupReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultSetReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LookupReply" nillable="true" type="tns:LookupReply" />
+  <xs:complexType name="SecureObjectCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DocObjectCall">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="trustees" nillable="true" type="q10:Trustees" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecureObjectCall" nillable="true" type="tns:SecureObjectCall" />
+  <xs:complexType name="DocObjectCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypedCallDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="properties" nillable="true" type="q11:NamedProperties" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocObjectCall" nillable="true" type="tns:DocObjectCall" />
+  <xs:complexType name="DocObjectReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="retProperties" nillable="true" type="q12:NamedProperties" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocObjectReply" nillable="true" type="tns:DocObjectReply" />
+  <xs:complexType name="SecureObjectReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="trustees" nillable="true" type="q13:Trustees" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecureObjectReply" nillable="true" type="tns:SecureObjectReply" />
+  <xs:complexType name="GetFormCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SingleLibraryCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="objectType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetFormCall" nillable="true" type="tns:GetFormCall" />
+  <xs:complexType name="GetFormReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="form" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetFormReply" nillable="true" type="tns:GetFormReply" />
+  <xs:complexType name="LoginCallSvr2">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LoginCall">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginCallSvr2" nillable="true" type="tns:LoginCallSvr2" />
+  <xs:complexType name="LoginCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="loginInfo" nillable="true" type="q14:ArrayOfDMSvrLoginInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginCall" nillable="true" type="tns:LoginCall" />
+  <xs:complexType name="LoginReplySvr2">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DSTOut" nillable="true" type="xs:string" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="loginProperties" nillable="true" type="q15:NamedProperties" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginReplySvr2" nillable="true" type="tns:LoginReplySvr2" />
+  <xs:complexType name="SearchCallSvr2">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypedCallDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="signature" nillable="true" type="q16:SearchSignatureSvr2" />
+          <xs:element minOccurs="0" name="requestedRows" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchCallSvr2" nillable="true" type="tns:SearchCallSvr2" />
+  <xs:complexType name="SearchReplySvr2">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SearchReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchReplySvr2" nillable="true" type="tns:SearchReplySvr2" />
+  <xs:complexType name="RecentDocsCallSvr2">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypedCallDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="signature" nillable="true" type="q17:SearchSignatureSvr2" />
+          <xs:element minOccurs="0" name="requestedRows" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RecentDocsCallSvr2" nillable="true" type="tns:RecentDocsCallSvr2" />
+  <xs:complexType name="RecentDocsReplySvr2">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultSetReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RecentDocsReplySvr2" nillable="true" type="tns:RecentDocsReplySvr2" />
+  <xs:complexType name="GetNetwareServersCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetNetwareServersCall" nillable="true" type="tns:GetNetwareServersCall" />
+  <xs:complexType name="NetwareServersReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="netwareServers" nillable="true" type="q18:NetwareServers" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NetwareServersReply" nillable="true" type="tns:NetwareServersReply" />
+  <xs:complexType name="SearchCallSvr3">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypedCallDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="signature" nillable="true" type="q19:SearchSignatureSvr3" />
+          <xs:element minOccurs="0" name="requestedRows" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchCallSvr3" nillable="true" type="tns:SearchCallSvr3" />
+  <xs:complexType name="SearchReplySvr3">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SearchReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchReplySvr3" nillable="true" type="tns:SearchReplySvr3" />
+  <xs:complexType name="GetDocCallSvr3">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="criteria" nillable="true" type="q20:SearchCriteria" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDocCallSvr3" nillable="true" type="tns:GetDocCallSvr3" />
+  <xs:complexType name="GetDocReplySvr3">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="docProperties" nillable="true" type="q21:NamedProperties" />
+          <xs:element minOccurs="0" name="getDocID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDocReplySvr3" nillable="true" type="tns:GetDocReplySvr3" />
+  <xs:complexType name="SQLServiceCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SingleLibraryCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sql" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SQLServiceCall" nillable="true" type="tns:SQLServiceCall" />
+  <xs:complexType name="SQLServiceReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="param1" type="xs:int" />
+          <xs:element minOccurs="0" name="param2" type="xs:int" />
+          <xs:element minOccurs="0" name="resultSetID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SQLServiceReply" nillable="true" type="tns:SQLServiceReply" />
+  <xs:complexType name="LoginCallSvr5">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LoginCallSvr2">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="authen" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginCallSvr5" nillable="true" type="tns:LoginCallSvr5" />
+  <xs:complexType name="LoginReplySvr5">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LoginReplySvr2">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginReplySvr5" nillable="true" type="tns:LoginReplySvr5" />
+  <xs:complexType name="NetworkInfoServiceCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DocObjectCall">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NetworkInfoServiceCall" nillable="true" type="tns:NetworkInfoServiceCall" />
+  <xs:complexType name="NetworkInfoServiceReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="networkInfo" nillable="true" type="q22:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NetworkInfoServiceReply" nillable="true" type="tns:NetworkInfoServiceReply" />
+  <xs:complexType name="LoginCallSvr6">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LoginCallSvr5">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="timeZoneName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginCallSvr6" nillable="true" type="tns:LoginCallSvr6" />
+  <xs:complexType name="LoginReplySvr6">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LoginReplySvr2">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginReplySvr6" nillable="true" type="tns:LoginReplySvr6" />
+  <xs:complexType name="QueryIdleProcessCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCallDescriptor">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryIdleProcessCall" nillable="true" type="tns:QueryIdleProcessCall" />
+  <xs:complexType name="QueryIdleProcessReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idleProcPctUtil" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryIdleProcessReply" nillable="true" type="tns:QueryIdleProcessReply" />
+  <xs:complexType name="GetServerListCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="timeStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetServerListCall" nillable="true" type="tns:GetServerListCall" />
+  <xs:complexType name="GetServerListReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="serverList" nillable="true" type="q23:ServerList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetServerListReply" nillable="true" type="tns:GetServerListReply" />
+  <xs:complexType name="GetClientParametersCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="timeStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetClientParametersCall" nillable="true" type="tns:GetClientParametersCall" />
+  <xs:complexType name="GetClientParametersReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="clientParameters" nillable="true" type="q24:ClientParameters" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetClientParametersReply" nillable="true" type="tns:GetClientParametersReply" />
+  <xs:complexType name="GetRowCountCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultSetCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="waitTillDone" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRowCountCall" nillable="true" type="tns:GetRowCountCall" />
+  <xs:complexType name="ResultSetCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="resultSetID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultSetCall" nillable="true" type="tns:ResultSetCall" />
+  <xs:complexType name="GetRowCountReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="rowCount" type="xs:int" />
+          <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRowCountReply" nillable="true" type="tns:GetRowCountReply" />
+  <xs:complexType name="GetDataCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultSetCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="requestedRows" type="xs:int" />
+          <xs:element minOccurs="0" name="startingRow" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDataCall" nillable="true" type="tns:GetDataCall" />
+  <xs:complexType name="GetDataReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="resultSetData" nillable="true" type="q25:ResultSetData" />
+          <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDataReply" nillable="true" type="tns:GetDataReply" />
+  <xs:complexType name="ReleaseDataCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultSetCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dstIn" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReleaseDataCall" nillable="true" type="tns:ReleaseDataCall" />
+  <xs:complexType name="ReleaseDataReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReleaseDataReply" nillable="true" type="tns:ReleaseDataReply" />
+  <xs:complexType name="GetMetaRowCountCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetRowCountCall">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMetaRowCountCall" nillable="true" type="tns:GetMetaRowCountCall" />
+  <xs:complexType name="GetMetaRowCountReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetRowCountReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMetaRowCountReply" nillable="true" type="tns:GetMetaRowCountReply" />
+  <xs:complexType name="GetMetaDataCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetDataCall">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMetaDataCall" nillable="true" type="tns:GetMetaDataCall" />
+  <xs:complexType name="GetMetaDataReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetDataReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMetaDataReply" nillable="true" type="tns:GetMetaDataReply" />
+  <xs:complexType name="GetJsonDataReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="jsonData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetJsonDataReply" nillable="true" type="tns:GetJsonDataReply" />
+  <xs:complexType name="QueryContentFormatsCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultSetCall">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryContentFormatsCall" nillable="true" type="tns:QueryContentFormatsCall" />
+  <xs:complexType name="QueryContentFormatsReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="formats" nillable="true" type="q26:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryContentFormatsReply" nillable="true" type="tns:QueryContentFormatsReply" />
+  <xs:complexType name="GetRowContentCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultSetCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="rowNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="contentType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRowContentCall" nillable="true" type="tns:GetRowContentCall" />
+  <xs:complexType name="GetRowContentReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getDocID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRowContentReply" nillable="true" type="tns:GetRowContentReply" />
+  <xs:complexType name="GetUIMetaDataRowCountCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetRowCountCall">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUIMetaDataRowCountCall" nillable="true" type="tns:GetUIMetaDataRowCountCall" />
+  <xs:complexType name="GetUIMetaDataRowCountReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetRowCountReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUIMetaDataRowCountReply" nillable="true" type="tns:GetUIMetaDataRowCountReply" />
+  <xs:complexType name="GetUIMetaDataCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetDataCall">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUIMetaDataCall" nillable="true" type="tns:GetUIMetaDataCall" />
+  <xs:complexType name="GetUIMetaDataReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetDataReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUIMetaDataReply" nillable="true" type="tns:GetUIMetaDataReply" />
+  <xs:complexType name="StreamCountCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContentObjectCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="componentID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StreamCountCall" nillable="true" type="tns:StreamCountCall" />
+  <xs:complexType name="ContentObjectCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contentID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContentObjectCall" nillable="true" type="tns:ContentObjectCall" />
+  <xs:complexType name="StreamCountReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="streamCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StreamCountReply" nillable="true" type="tns:StreamCountReply" />
+  <xs:complexType name="StreamCloseCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContentObjectCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="componentID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StreamCloseCall" nillable="true" type="tns:StreamCloseCall" />
+  <xs:complexType name="StreamCloseReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StreamCloseReply" nillable="true" type="tns:StreamCloseReply" />
+  <xs:complexType name="GetReadStreamCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContentObjectCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="componentID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetReadStreamCall" nillable="true" type="tns:GetReadStreamCall" />
+  <xs:complexType name="GetReadStreamReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="streamID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetReadStreamReply" nillable="true" type="tns:GetReadStreamReply" />
+  <xs:complexType name="GetWriteStreamCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetReadStreamCall">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetWriteStreamCall" nillable="true" type="tns:GetWriteStreamCall" />
+  <xs:complexType name="GetWriteStreamReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetReadStreamReply">
+        <xs:sequence>
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="retProperties" nillable="true" type="q27:NamedProperties" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetWriteStreamReply" nillable="true" type="tns:GetWriteStreamReply" />
+  <xs:complexType name="SaveCostInfoCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContentObjectCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="elapsedTime" type="xs:int" />
+          <xs:element minOccurs="0" name="typedTime" type="xs:int" />
+          <xs:element minOccurs="0" name="keystrokes" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveCostInfoCall" nillable="true" type="tns:SaveCostInfoCall" />
+  <xs:complexType name="SaveCostInfoReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveCostInfoReply" nillable="true" type="tns:SaveCostInfoReply" />
+  <xs:complexType name="ReadStreamCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StreamObjectCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="requestedBytes" type="xs:unsignedInt" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadStreamCall" nillable="true" type="tns:ReadStreamCall" />
+  <xs:complexType name="StreamObjectCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="streamID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StreamObjectCall" nillable="true" type="tns:StreamObjectCall" />
+  <xs:complexType name="ReadStreamReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StreamObjectReply">
+        <xs:sequence>
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="streamData" nillable="true" type="q28:StreamData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReadStreamReply" nillable="true" type="tns:ReadStreamReply" />
+  <xs:complexType name="StreamObjectReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StreamObjectReply" nillable="true" type="tns:StreamObjectReply" />
+  <xs:complexType name="WriteStreamCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StreamObjectCall">
+        <xs:sequence>
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="streamData" nillable="true" type="q29:StreamData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WriteStreamCall" nillable="true" type="tns:WriteStreamCall" />
+  <xs:complexType name="WriteStreamReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StreamObjectReply">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bytesWritten" type="xs:unsignedInt" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WriteStreamReply" nillable="true" type="tns:WriteStreamReply" />
+  <xs:complexType name="SeekStreamCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StreamObjectCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="moveBytes" type="xs:long" />
+          <xs:element minOccurs="0" name="origin" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeekStreamCall" nillable="true" type="tns:SeekStreamCall" />
+  <xs:complexType name="SeekStreamReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StreamObjectReply">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="newPosition" type="xs:unsignedLong" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeekStreamReply" nillable="true" type="tns:SeekStreamReply" />
+  <xs:complexType name="StatStreamCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StreamObjectCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="flags" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StatStreamCall" nillable="true" type="tns:StatStreamCall" />
+  <xs:complexType name="StatStreamReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StreamObjectReply">
+        <xs:sequence>
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="streamStatistics" nillable="true" type="q30:StreamStatistics" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StatStreamReply" nillable="true" type="tns:StatStreamReply" />
+  <xs:complexType name="CommitStreamCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StreamObjectCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="flags" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CommitStreamCall" nillable="true" type="tns:CommitStreamCall" />
+  <xs:complexType name="NewEnumCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CollectionCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="options" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NewEnumCall" nillable="true" type="tns:NewEnumCall" />
+  <xs:complexType name="CollectionCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="collectionID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CollectionCall" nillable="true" type="tns:CollectionCall" />
+  <xs:complexType name="NewEnumReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="enumID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NewEnumReply" nillable="true" type="tns:NewEnumReply" />
+  <xs:complexType name="NextDataCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EnumCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="elementCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NextDataCall" nillable="true" type="tns:NextDataCall" />
+  <xs:complexType name="EnumCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SecureCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="enumID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnumCall" nillable="true" type="tns:EnumCall" />
+  <xs:complexType name="NextDataReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence>
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" minOccurs="0" name="genericItemsData" nillable="true" type="q31:GenericItemsData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NextDataReply" nillable="true" type="tns:NextDataReply" />
+  <xs:complexType name="SkipCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EnumCall">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="elementCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SkipCall" nillable="true" type="tns:SkipCall" />
+  <xs:complexType name="SkipReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SkipReply" nillable="true" type="tns:SkipReply" />
+  <xs:complexType name="ResetCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EnumCall">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetCall" nillable="true" type="tns:ResetCall" />
+  <xs:complexType name="ResetReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetReply" nillable="true" type="tns:ResetReply" />
+  <xs:complexType name="CloneCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EnumCall">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CloneCall" nillable="true" type="tns:CloneCall" />
+  <xs:complexType name="CloneReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NewEnumReply">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CloneReply" nillable="true" type="tns:CloneReply" />
+  <xs:complexType name="ReleaseObjectCall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCallDescriptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="objectID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReleaseObjectCall" nillable="true" type="tns:ReleaseObjectCall" />
+  <xs:complexType name="ReleaseObjectReply">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseReplyDescriptor">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReleaseObjectReply" nillable="true" type="tns:ReleaseObjectReply" />
+</xs:schema>

@@ -1,0 +1,1486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://OpenText.DMSvr.InteropSvc" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DMSvrInteropSvcImpl" targetNamespace="http://OpenText.DMSvr.InteropSvc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://OpenText.DMSvr.InteropSvc/Imports">
+      <xsd:import schemaLocation="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd0" namespace="http://OpenText.DMSvr.InteropSvc" />
+      <xsd:import schemaLocation="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" />
+      <xsd:import schemaLocation="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" />
+      <xsd:import schemaLocation="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDMSvc_GetLoginLibraries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginLibraries" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetLoginLibraries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginLibrariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetLoginLibraries_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q1:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_Search_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q2:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_RecentDocs_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecentDocs" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_RecentDocs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecentDocsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_RecentDocs_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q3:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_PutDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutDoc" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_PutDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_PutDoc_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q4:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoc" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetDoc_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q5:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_Lookup_InputMessage">
+    <wsdl:part name="parameters" element="tns:Lookup" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_Lookup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_Lookup_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q6:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_CreateObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateObject" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_CreateObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_CreateObject_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q7:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_FetchObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchObject" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_FetchObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_FetchObject_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q8:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_UpdateObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateObject" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_UpdateObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_UpdateObject_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q9:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_DeleteObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteObject" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_DeleteObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_DeleteObject_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q10:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetTrustees_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrustees" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetTrustees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrusteesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetTrustees_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q11:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SetTrustees_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTrustees" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SetTrustees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTrusteesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SetTrustees_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q12:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetDocsForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocsForm" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetDocsForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocsFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetDocsForm_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q13:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_LoginSvr2_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginSvr2" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_LoginSvr2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginSvr2Response" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_LoginSvr2_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q14:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SearchSvr2_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSvr2" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SearchSvr2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSvr2Response" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SearchSvr2_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q15:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_RecentDocsSvr2_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecentDocsSvr2" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_RecentDocsSvr2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecentDocsSvr2Response" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_RecentDocsSvr2_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q16:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetNetwareServers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetwareServers" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetNetwareServers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetwareServersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetNetwareServers_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q17:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SearchSvr3_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSvr3" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SearchSvr3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSvr3Response" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SearchSvr3_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q18:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetDocSvr3_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocSvr3" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetDocSvr3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocSvr3Response" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetDocSvr3_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q19:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SQLService_InputMessage">
+    <wsdl:part name="parameters" element="tns:SQLService" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SQLService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SQLServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_SQLService_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q20:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_LoginSvr5_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginSvr5" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_LoginSvr5_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginSvr5Response" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_LoginSvr5_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q21:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_NetworkInfoService_InputMessage">
+    <wsdl:part name="parameters" element="tns:NetworkInfoService" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_NetworkInfoService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NetworkInfoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_NetworkInfoService_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q22:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_LoginSvr6_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginSvr6" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_LoginSvr6_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginSvr6Response" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_LoginSvr6_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q23:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_QueryIdleProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryIdleProcess" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_QueryIdleProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryIdleProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_QueryIdleProcess_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q24:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetServerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerList" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetServerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetServerList_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q25:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetClientParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientParameters" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetClientParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSvc_GetClientParameters_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q26:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetRowCount_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q27:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetData_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q28:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_ReleaseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseData" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_ReleaseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_ReleaseData_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q29:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetMetaRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetMetaRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetMetaRowCount_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q30:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetMetaData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaData" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetMetaData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetMetaData_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q31:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetDataW_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataW" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetDataW_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataWResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetDataW_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q32:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetMetaDataW_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaDataW" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetMetaDataW_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMetaDataWResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetMetaDataW_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q33:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetJsonData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonData" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetJsonData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetJsonData_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q34:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetJsonMetaData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonMetaData" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetJsonMetaData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonMetaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetJsonMetaData_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q35:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_QueryContentFormats_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryContentFormats" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_QueryContentFormats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryContentFormatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_QueryContentFormats_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q36:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetRowContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowContent" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetRowContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetRowContent_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q37:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetUIMetaDataRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUIMetaDataRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetUIMetaDataRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUIMetaDataRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetUIMetaDataRowCount_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q38:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetUIMetaData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUIMetaData" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetUIMetaData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUIMetaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetUIMetaData_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q39:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetUIMetaDataW_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUIMetaDataW" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetUIMetaDataW_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUIMetaDataWResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetUIMetaDataW_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q40:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_StreamCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:StreamCount" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_StreamCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StreamCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_StreamCount_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q41:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_StreamClose_InputMessage">
+    <wsdl:part name="parameters" element="tns:StreamClose" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_StreamClose_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StreamCloseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_StreamClose_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q42:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetReadStream_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReadStream" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetReadStream_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReadStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetReadStream_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q43:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetWriteStream_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWriteStream" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetWriteStream_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWriteStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_GetWriteStream_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q44:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_SaveCostInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCostInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_SaveCostInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCostInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_SaveCostInfo_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q45:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_ReadStream_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStream" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_ReadStream_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_ReadStream_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q46:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_WriteStream_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteStream" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_WriteStream_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_WriteStream_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q47:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_SeekStream_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeekStream" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_SeekStream_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeekStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_SeekStream_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q48:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_StatStream_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatStream" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_StatStream_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_StatStream_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q49:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_CommitStream_InputMessage">
+    <wsdl:part name="parameters" element="tns:CommitStream" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_CommitStream_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CommitStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_CommitStream_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q50:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_NewEnum_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewEnum" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_NewEnum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewEnumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_NewEnum_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q51:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_NextData_InputMessage">
+    <wsdl:part name="parameters" element="tns:NextData" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_NextData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NextDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_NextData_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q52:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_Skip_InputMessage">
+    <wsdl:part name="parameters" element="tns:Skip" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_Skip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SkipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_Skip_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q53:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_Reset_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reset" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_Reset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_Reset_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q54:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_Clone_InputMessage">
+    <wsdl:part name="parameters" element="tns:Clone" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_Clone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_Clone_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q55:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_ReleaseObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseObject" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_ReleaseObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMObj_ReleaseObject_DMSvrFaultFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.InteropSvc" name="detail" element="q56:DMSvrFault" />
+  </wsdl:message>
+  <wsdl:portType name="IDMSvc">
+    <wsdl:operation name="GetLoginLibraries">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetLoginLibraries" message="tns:IDMSvc_GetLoginLibraries_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetLoginLibrariesResponse" message="tns:IDMSvc_GetLoginLibraries_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetLoginLibrariesDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_GetLoginLibraries_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/Search" message="tns:IDMSvc_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/SearchResponse" message="tns:IDMSvc_Search_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/SearchDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_Search_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecentDocs">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/RecentDocs" message="tns:IDMSvc_RecentDocs_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/RecentDocsResponse" message="tns:IDMSvc_RecentDocs_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/RecentDocsDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_RecentDocs_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutDoc">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/PutDoc" message="tns:IDMSvc_PutDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/PutDocResponse" message="tns:IDMSvc_PutDoc_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/PutDocDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_PutDoc_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoc">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetDoc" message="tns:IDMSvc_GetDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetDocResponse" message="tns:IDMSvc_GetDoc_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetDocDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_GetDoc_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Lookup">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/Lookup" message="tns:IDMSvc_Lookup_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/LookupResponse" message="tns:IDMSvc_Lookup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/LookupDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_Lookup_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateObject">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/CreateObject" message="tns:IDMSvc_CreateObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/CreateObjectResponse" message="tns:IDMSvc_CreateObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/CreateObjectDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_CreateObject_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchObject">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/FetchObject" message="tns:IDMSvc_FetchObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/FetchObjectResponse" message="tns:IDMSvc_FetchObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/FetchObjectDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_FetchObject_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/UpdateObject" message="tns:IDMSvc_UpdateObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/UpdateObjectResponse" message="tns:IDMSvc_UpdateObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/UpdateObjectDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_UpdateObject_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObject">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/DeleteObject" message="tns:IDMSvc_DeleteObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/DeleteObjectResponse" message="tns:IDMSvc_DeleteObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/DeleteObjectDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_DeleteObject_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrustees">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetTrustees" message="tns:IDMSvc_GetTrustees_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetTrusteesResponse" message="tns:IDMSvc_GetTrustees_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetTrusteesDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_GetTrustees_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTrustees">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/SetTrustees" message="tns:IDMSvc_SetTrustees_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/SetTrusteesResponse" message="tns:IDMSvc_SetTrustees_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/SetTrusteesDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_SetTrustees_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocsForm">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetDocsForm" message="tns:IDMSvc_GetDocsForm_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetDocsFormResponse" message="tns:IDMSvc_GetDocsForm_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetDocsFormDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_GetDocsForm_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginSvr2">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/LoginSvr2" message="tns:IDMSvc_LoginSvr2_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/LoginSvr2Response" message="tns:IDMSvc_LoginSvr2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/LoginSvr2DMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_LoginSvr2_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchSvr2">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/SearchSvr2" message="tns:IDMSvc_SearchSvr2_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/SearchSvr2Response" message="tns:IDMSvc_SearchSvr2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/SearchSvr2DMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_SearchSvr2_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecentDocsSvr2">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/RecentDocsSvr2" message="tns:IDMSvc_RecentDocsSvr2_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/RecentDocsSvr2Response" message="tns:IDMSvc_RecentDocsSvr2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/RecentDocsSvr2DMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_RecentDocsSvr2_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetwareServers">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/GetNetwareServers" message="tns:IDMSvc_GetNetwareServers_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/GetNetwareServersResponse" message="tns:IDMSvc_GetNetwareServers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer2/GetNetwareServersDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_GetNetwareServers_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchSvr3">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer3/SearchSvr3" message="tns:IDMSvc_SearchSvr3_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer3/SearchSvr3Response" message="tns:IDMSvc_SearchSvr3_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer3/SearchSvr3DMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_SearchSvr3_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocSvr3">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer3/GetDocSvr3" message="tns:IDMSvc_GetDocSvr3_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer3/GetDocSvr3Response" message="tns:IDMSvc_GetDocSvr3_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer3/GetDocSvr3DMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_GetDocSvr3_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SQLService">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer4/SQLService" message="tns:IDMSvc_SQLService_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer4/SQLServiceResponse" message="tns:IDMSvc_SQLService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer4/SQLServiceDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_SQLService_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginSvr5">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer5/LoginSvr5" message="tns:IDMSvc_LoginSvr5_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer5/LoginSvr5Response" message="tns:IDMSvc_LoginSvr5_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer5/LoginSvr5DMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_LoginSvr5_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NetworkInfoService">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer5/NetworkInfoService" message="tns:IDMSvc_NetworkInfoService_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer5/NetworkInfoServiceResponse" message="tns:IDMSvc_NetworkInfoService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer5/NetworkInfoServiceDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_NetworkInfoService_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginSvr6">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer6/LoginSvr6" message="tns:IDMSvc_LoginSvr6_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer6/LoginSvr6Response" message="tns:IDMSvc_LoginSvr6_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcServer6/LoginSvr6DMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_LoginSvr6_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryIdleProcess">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/QueryIdleProcess" message="tns:IDMSvc_QueryIdleProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/QueryIdleProcessResponse" message="tns:IDMSvc_QueryIdleProcess_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/QueryIdleProcessDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_QueryIdleProcess_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerList">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/GetServerList" message="tns:IDMSvc_GetServerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/GetServerListResponse" message="tns:IDMSvc_GetServerList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/GetServerListDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_GetServerList_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientParameters">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/GetClientParameters" message="tns:IDMSvc_GetClientParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/GetClientParametersResponse" message="tns:IDMSvc_GetClientParameters_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/GetClientParametersDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMSvc_GetClientParameters_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IDMObj">
+    <wsdl:operation name="GetRowCount">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/GetRowCount" message="tns:IDMObj_GetRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/GetRowCountResponse" message="tns:IDMObj_GetRowCount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/GetRowCountDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetRowCount_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/GetData" message="tns:IDMObj_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/GetDataResponse" message="tns:IDMObj_GetData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/GetDataDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetData_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseData">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/ReleaseData" message="tns:IDMObj_ReleaseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/ReleaseDataResponse" message="tns:IDMObj_ReleaseData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/ReleaseDataDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_ReleaseData_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMetaRowCount">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr2/GetMetaRowCount" message="tns:IDMObj_GetMetaRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr2/GetMetaRowCountResponse" message="tns:IDMObj_GetMetaRowCount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr2/GetMetaRowCountDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetMetaRowCount_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMetaData">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr2/GetMetaData" message="tns:IDMObj_GetMetaData_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr2/GetMetaDataResponse" message="tns:IDMObj_GetMetaData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr2/GetMetaDataDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetMetaData_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataW">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetDataW" message="tns:IDMObj_GetDataW_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetDataWResponse" message="tns:IDMObj_GetDataW_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetDataWDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetDataW_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMetaDataW">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetMetaDataW" message="tns:IDMObj_GetMetaDataW_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetMetaDataWResponse" message="tns:IDMObj_GetMetaDataW_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetMetaDataWDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetMetaDataW_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJsonData">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetJsonData" message="tns:IDMObj_GetJsonData_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetJsonDataResponse" message="tns:IDMObj_GetJsonData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetJsonDataDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetJsonData_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJsonMetaData">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetJsonMetaData" message="tns:IDMObj_GetJsonMetaData_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetJsonMetaDataResponse" message="tns:IDMObj_GetJsonMetaData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetJsonMetaDataDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetJsonMetaData_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryContentFormats">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultContent/QueryContentFormats" message="tns:IDMObj_QueryContentFormats_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultContent/QueryContentFormatsResponse" message="tns:IDMObj_QueryContentFormats_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultContent/QueryContentFormatsDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_QueryContentFormats_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRowContent">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultContent/GetRowContent" message="tns:IDMObj_GetRowContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultContent/GetRowContentResponse" message="tns:IDMObj_GetRowContent_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcResultContent/GetRowContentDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetRowContent_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUIMetaDataRowCount">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLookup/GetUIMetaDataRowCount" message="tns:IDMObj_GetUIMetaDataRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLookup/GetUIMetaDataRowCountResponse" message="tns:IDMObj_GetUIMetaDataRowCount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLookup/GetUIMetaDataRowCountDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetUIMetaDataRowCount_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUIMetaData">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLookup/GetUIMetaData" message="tns:IDMObj_GetUIMetaData_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLookup/GetUIMetaDataResponse" message="tns:IDMObj_GetUIMetaData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLookup/GetUIMetaDataDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetUIMetaData_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUIMetaDataW">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLookup2/GetUIMetaDataW" message="tns:IDMObj_GetUIMetaDataW_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLookup2/GetUIMetaDataWResponse" message="tns:IDMObj_GetUIMetaDataW_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcLookup2/GetUIMetaDataWDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetUIMetaDataW_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StreamCount">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcContent/StreamCount" message="tns:IDMObj_StreamCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcContent/StreamCountResponse" message="tns:IDMObj_StreamCount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcContent/StreamCountDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_StreamCount_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StreamClose">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcContent/StreamClose" message="tns:IDMObj_StreamClose_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcContent/StreamCloseResponse" message="tns:IDMObj_StreamClose_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcContent/StreamCloseDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_StreamClose_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReadStream">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcReadContent/GetReadStream" message="tns:IDMObj_GetReadStream_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcReadContent/GetReadStreamResponse" message="tns:IDMObj_GetReadStream_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcReadContent/GetReadStreamDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetReadStream_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWriteStream">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcWriteContent/GetWriteStream" message="tns:IDMObj_GetWriteStream_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcWriteContent/GetWriteStreamResponse" message="tns:IDMObj_GetWriteStream_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcWriteContent/GetWriteStreamDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_GetWriteStream_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCostInfo">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcWriteContent/SaveCostInfo" message="tns:IDMObj_SaveCostInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcWriteContent/SaveCostInfoResponse" message="tns:IDMObj_SaveCostInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcWriteContent/SaveCostInfoDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_SaveCostInfo_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadStream">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/ReadStream" message="tns:IDMObj_ReadStream_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/ReadStreamResponse" message="tns:IDMObj_ReadStream_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/ReadStreamDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_ReadStream_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteStream">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/WriteStream" message="tns:IDMObj_WriteStream_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/WriteStreamResponse" message="tns:IDMObj_WriteStream_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/WriteStreamDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_WriteStream_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeekStream">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/SeekStream" message="tns:IDMObj_SeekStream_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/SeekStreamResponse" message="tns:IDMObj_SeekStream_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/SeekStreamDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_SeekStream_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatStream">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/StatStream" message="tns:IDMObj_StatStream_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/StatStreamResponse" message="tns:IDMObj_StatStream_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/StatStreamDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_StatStream_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitStream">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/CommitStream" message="tns:IDMObj_CommitStream_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/CommitStreamResponse" message="tns:IDMObj_CommitStream_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcStream/CommitStreamDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_CommitStream_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewEnum">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/NewEnum" message="tns:IDMObj_NewEnum_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/NewEnumResponse" message="tns:IDMObj_NewEnum_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/NewEnumDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_NewEnum_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NextData">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/NextData" message="tns:IDMObj_NextData_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/NextDataResponse" message="tns:IDMObj_NextData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/NextDataDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_NextData_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Skip">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/Skip" message="tns:IDMObj_Skip_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/SkipResponse" message="tns:IDMObj_Skip_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/SkipDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_Skip_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reset">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/Reset" message="tns:IDMObj_Reset_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/ResetResponse" message="tns:IDMObj_Reset_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/ResetDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_Reset_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Clone">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/Clone" message="tns:IDMObj_Clone_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/CloneResponse" message="tns:IDMObj_Clone_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcCollection/CloneDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_Clone_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseObject">
+      <wsdl:input wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcObjects/ReleaseObject" message="tns:IDMObj_ReleaseObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcObjects/ReleaseObjectResponse" message="tns:IDMObj_ReleaseObject_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://OpenText.DMSvr.InteropSvc/ISvcObjects/ReleaseObjectDMSvrFaultFault" name="DMSvrFaultFault" message="tns:IDMObj_ReleaseObject_DMSvrFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDMSvc" type="tns:IDMSvc">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLoginLibraries">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetLoginLibraries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RecentDocs">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/RecentDocs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutDoc">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/PutDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoc">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Lookup">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/Lookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateObject">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/CreateObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FetchObject">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/FetchObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/UpdateObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObject">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/DeleteObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrustees">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetTrustees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetTrustees">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/SetTrustees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocsForm">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer/GetDocsForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoginSvr2">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer2/LoginSvr2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSvr2">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer2/SearchSvr2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RecentDocsSvr2">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer2/RecentDocsSvr2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetwareServers">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer2/GetNetwareServers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSvr3">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer3/SearchSvr3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocSvr3">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer3/GetDocSvr3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SQLService">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer4/SQLService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoginSvr5">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer5/LoginSvr5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NetworkInfoService">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer5/NetworkInfoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoginSvr6">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcServer6/LoginSvr6" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueryIdleProcess">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/QueryIdleProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerList">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/GetServerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientParameters">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcLbPerf/GetClientParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IDMObj" type="tns:IDMObj">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRowCount">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/GetRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseData">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultSet/ReleaseData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMetaRowCount">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr2/GetMetaRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMetaData">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr2/GetMetaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataW">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetDataW" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMetaDataW">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetMetaDataW" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetJsonData">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetJsonData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetJsonMetaData">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultSetSvr3/GetJsonMetaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueryContentFormats">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultContent/QueryContentFormats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRowContent">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcResultContent/GetRowContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUIMetaDataRowCount">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcLookup/GetUIMetaDataRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUIMetaData">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcLookup/GetUIMetaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUIMetaDataW">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcLookup2/GetUIMetaDataW" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StreamCount">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcContent/StreamCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StreamClose">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcContent/StreamClose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReadStream">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcReadContent/GetReadStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWriteStream">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcWriteContent/GetWriteStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCostInfo">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcWriteContent/SaveCostInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadStream">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcStream/ReadStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="WriteStream">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcStream/WriteStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SeekStream">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcStream/SeekStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StatStream">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcStream/StatStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CommitStream">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcStream/CommitStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NewEnum">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcCollection/NewEnum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NextData">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcCollection/NextData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Skip">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcCollection/Skip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Reset">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcCollection/Reset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Clone">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcCollection/Clone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseObject">
+      <soap:operation soapAction="http://OpenText.DMSvr.InteropSvc/ISvcObjects/ReleaseObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DMSvrFaultFault">
+        <soap:fault use="literal" name="DMSvrFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DMSvrInteropSvcImpl">
+    <wsdl:port name="BasicHttpBinding_IDMSvc" binding="tns:BasicHttpBinding_IDMSvc">
+      <soap:address location="http://win-hfvgfmp2gdc:8080/DMSvr/Svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IDMObj" binding="tns:BasicHttpBinding_IDMObj">
+      <soap:address location="http://win-hfvgfmp2gdc:8080/DMSvr/Obj" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

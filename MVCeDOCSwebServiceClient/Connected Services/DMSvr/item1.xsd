@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OpenText.DMSvr.Serializable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://win-hfvgfmp2gdc:8080/DMSvr/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="NamedProperties">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="propertyCount" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="propertyNames" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="propertyValues" nillable="true" type="q2:ArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NamedProperties" nillable="true" type="tns:NamedProperties" />
+  <xs:complexType name="SearchSignature">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="libraries" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="criteria" nillable="true" type="tns:SearchCriteria" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="retProperties" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="sortProps" nillable="true" type="tns:SortProperties" />
+      <xs:element minOccurs="0" name="maxRows" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchSignature" nillable="true" type="tns:SearchSignature" />
+  <xs:complexType name="SearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="criteriaCount" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="criteriaNames" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="criteriaValues" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchCriteria" nillable="true" type="tns:SearchCriteria" />
+  <xs:complexType name="SortProperties">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="propertyCount" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="propertyNames" nillable="true" type="q7:ArrayOfstring" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="propertyFlags" nillable="true" type="q8:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SortProperties" nillable="true" type="tns:SortProperties" />
+  <xs:complexType name="ResultSetData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="columns" type="xs:int" />
+      <xs:element minOccurs="0" name="actualRows" type="xs:int" />
+      <xs:element minOccurs="0" name="bufferSize" type="xs:int" />
+      <xs:element minOccurs="0" name="resultBuffer" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultSetData" nillable="true" type="tns:ResultSetData" />
+  <xs:complexType name="Trustees">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="trusteeCount" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="trusteeNames" nillable="true" type="q9:ArrayOfstring" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="trusteeFlags" nillable="true" type="q10:ArrayOfint" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="trusteeRights" nillable="true" type="q11:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Trustees" nillable="true" type="tns:Trustees" />
+  <xs:complexType name="ArrayOfDMSvrLoginInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DMSvrLoginInfo" nillable="true" type="tns:DMSvrLoginInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDMSvrLoginInfo" nillable="true" type="tns:ArrayOfDMSvrLoginInfo" />
+  <xs:complexType name="DMSvrLoginInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="network" type="xs:int" />
+      <xs:element minOccurs="0" name="loginContext" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DMSvrLoginInfo" nillable="true" type="tns:DMSvrLoginInfo" />
+  <xs:complexType name="SearchSignatureSvr2">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SearchSignature">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="retMetaProperties" nillable="true" type="q12:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchSignatureSvr2" nillable="true" type="tns:SearchSignatureSvr2" />
+  <xs:complexType name="NetwareServers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="serverCount" type="xs:int" />
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="locations" nillable="true" type="q13:ArrayOfstring" />
+      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OSs" nillable="true" type="q14:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NetwareServers" nillable="true" type="tns:NetwareServers" />
+  <xs:complexType name="SearchSignatureSvr3">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contexts" nillable="true" type="tns:SearchContexts" />
+      <xs:element minOccurs="0" name="criteria" nillable="true" type="tns:SearchCriteria" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="retProperties" nillable="true" type="q15:ArrayOfstring" />
+      <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="retMetaProperties" nillable="true" type="q16:ArrayOfstring" />
+      <xs:element minOccurs="0" name="sortProps" nillable="true" type="tns:SortProperties" />
+      <xs:element minOccurs="0" name="options" nillable="true" type="tns:SearchOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchSignatureSvr3" nillable="true" type="tns:SearchSignatureSvr3" />
+  <xs:complexType name="SearchContexts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contextCount" type="xs:int" />
+      <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="contextNames" nillable="true" type="q17:ArrayOfstring" />
+      <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="contextTypes" nillable="true" type="q18:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchContexts" nillable="true" type="tns:SearchContexts" />
+  <xs:complexType name="SearchOptions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="optionCount" type="xs:int" />
+      <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="optionTypes" nillable="true" type="q19:ArrayOfint" />
+      <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="optionValues" nillable="true" type="q20:ArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchOptions" nillable="true" type="tns:SearchOptions" />
+  <xs:complexType name="ServerList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="timeStamp" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="serverCount" type="xs:int" />
+      <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="serverNames" nillable="true" type="q21:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServerList" nillable="true" type="tns:ServerList" />
+  <xs:complexType name="ClientParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="timeStamp" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="parameters" nillable="true" type="tns:NamedProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientParameters" nillable="true" type="tns:ClientParameters" />
+  <xs:complexType name="StreamData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bufferSize" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="streamBuffer" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StreamData" nillable="true" type="tns:StreamData" />
+  <xs:complexType name="StreamStatistics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type" type="xs:int" />
+      <xs:element minOccurs="0" name="size" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="mtime" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="ctime" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="atime" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="grfMode" type="xs:int" />
+      <xs:element minOccurs="0" name="grfLocksSupported" type="xs:int" />
+      <xs:element minOccurs="0" name="clsid" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="grfStateBits" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StreamStatistics" nillable="true" type="tns:StreamStatistics" />
+  <xs:complexType name="GenericItemsData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="itemCount" type="xs:int" />
+      <xs:element minOccurs="0" name="propertyCount" type="xs:int" />
+      <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="propertyNames" nillable="true" type="q22:ArrayOfstring" />
+      <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="propertyRows" nillable="true" type="q23:ArrayOfArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericItemsData" nillable="true" type="tns:GenericItemsData" />
+</xs:schema>

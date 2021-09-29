@@ -1,0 +1,51 @@
+﻿@model MVCeDOCSwebServiceClient.Models.DocsFusionModel
+
+@{
+    ViewBag.Title = "ListLibraries";
+}
+
+<h2>ListLibraries</h2>
+
+<div>
+    <h4>DocsFusionModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginLibs)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.LoginLibs)*@
+            @Html.DropDownListFor(model => model.LoginLibs, new SelectList(Model.LoginLibs))
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginLibsCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginLibsCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginLibrary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginLibrary)
+        </dd>       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserDST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserDST)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
