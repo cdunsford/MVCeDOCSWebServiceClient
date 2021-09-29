@@ -19,6 +19,7 @@ namespace MVCeDOCSwebServiceClient.DataAccess
             //EndpointAddress addr = new EndpointAddress("http://win-hfvgfmp2gdc:8080/DMSvr/Svc");
             EndpointAddress addr = new EndpointAddress(serverAddress);
             return new DMSvr.DMSvcClient(binding, addr);
+
         }
         //private string BaseAddress(string targetService)
         //{
