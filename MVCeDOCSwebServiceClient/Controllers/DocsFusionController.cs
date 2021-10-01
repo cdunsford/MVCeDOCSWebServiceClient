@@ -1,5 +1,7 @@
 ﻿using MVCeDOCSwebServiceClient.DataAccess;
 using MVCeDOCSwebServiceClient.Models;
+using MVCeDOCSwebServiceClient.Services.Utility;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -15,6 +17,9 @@ namespace MVCeDOCSwebServiceClient.Controllers
 {
     public class DocsFusionController : Controller
     {
+
+        private static Logger logger = LogManager.GetLogger("myAppLoggerRules");
+
         // GET: DocsFusion
         public ActionResult Index()
         {
@@ -23,6 +28,9 @@ namespace MVCeDOCSwebServiceClient.Controllers
 
         public ActionResult ListLibraries()
         {
+
+            AppLogger.GetInstance().Info("STARTING " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             DocsFusionModel docsFusion = new DocsFusionModel();
 
             try
@@ -45,11 +53,11 @@ namespace MVCeDOCSwebServiceClient.Controllers
             }
             catch (Exception ex)
             {
-
+                AppLogger.GetInstance().Error("Exception:  " + ex.Message);
                 throw ex;
             }
 
-
+            AppLogger.GetInstance().Info("COMPLETING " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return View(docsFusion);
 
         }
