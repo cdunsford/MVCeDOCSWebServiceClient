@@ -1,9 +1,26 @@
-﻿<!DOCTYPE html>
+﻿@using System.Configuration;
+<!DOCTYPE html>
 <html>
 <head>
+    @{
+        cmdDMWebTreeConfiguration config = (cmdDMWebTreeConfiguration)ConfigurationManager.GetSection("cmdDMConfig");
+        bool isExternalSite = config.IsExternalSite;
+        string siteName = "eDOCS ";
+
+        if (isExternalSite)
+        {
+            siteName += "Public Web";
+        }
+        else
+        {
+            siteName += "Employee Web";
+        }
+
+    }
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>MnDOT @siteName - @ViewBag.Title</title>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
