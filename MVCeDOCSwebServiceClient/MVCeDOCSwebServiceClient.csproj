@@ -133,12 +133,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ContactInputController.cs" />
     <Compile Include="Controllers\DocsFusionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccess\Connection.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactInput.cs" />
     <Compile Include="Models\DocsFusionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Utility\AppLogger.cs" />
@@ -302,6 +304,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -331,6 +334,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\cmddmwebtree.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -357,6 +361,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\DocsFusion\Index.cshtml" />
     <Content Include="Views\DocsFusion\ListLibraries.cshtml" />
+    <Content Include="Views\Shared\_ContactUs.cshtml" />
+    <Content Include="Views\ContactInput\Index.cshtml" />
+    <Content Include="Views\ContactInput\ThankYou.cshtml" />
+    <Content Include="Views\ContactInput\Sorry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

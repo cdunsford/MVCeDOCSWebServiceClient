@@ -22,9 +22,13 @@ namespace MVCeDOCSwebServiceClient
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/cmd").Include(
+                      "~/Scripts/cmddmwebtree.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/custom.css"));
         }
     }
 }

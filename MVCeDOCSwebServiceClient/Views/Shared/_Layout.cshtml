@@ -25,35 +25,54 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div class="container">
+        <div class="navbar navbar-static-top" id="webtreetopnav">
+            <a href="http://dot.state.mn.us/" target="_blank"><img class="logo navbar-header" src="~/images/DOT-Logo-CMYK.png" alt="MnDOT Logo" /></a>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <div class="navbar-brand">@siteName</div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Profile Search", "ProfileSearch", "DMResultSet")</li>
+                        <li>@Html.ActionLink("Tree Search", "Index", "DMResultSet")</li>
+                        <li>@Html.ActionLink("Content Search", "ContentSearch", "DMResultSet")</li>
+
+                        @if (!isExternalSite)
+                        {
+                            <li>@Html.ActionLink("Upload Documents", "Index", "DMUpload")</li>
+                        }
+                        <li>@Html.ActionLink("About", "About", "DMResultSet")</li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li></li>
+                        <li>@Html.Partial("_ContactUs")</li>
+                    </ul>
+                    <div id="contacturl" data-request-url="@Url.Action("Index", "ContactInput")"></div>
+                </div>
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
+            
+
+        </div>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - eDOCS Web Services Client Application</p>
+            </footer>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - eDOCS Web Services Client Application</p>
-        </footer>
-    </div>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/cmd")
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -1,0 +1,6 @@
+﻿body {
+}
+#webtreetopnav {
+    /*To remove bottom margin, which gets in the way when returning focus to top after filter search*/
+    margin-bottom: 0px;
+}

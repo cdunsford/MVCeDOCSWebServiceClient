@@ -18,7 +18,7 @@ namespace MVCeDOCSwebServiceClient.Controllers
     public class DocsFusionController : Controller
     {
 
-        private static Logger logger = LogManager.GetLogger("myAppLoggerRules");
+        //private static Logger logger = LogManager.GetLogger("myAppLoggerRules");
 
         // GET: DocsFusion
         public ActionResult Index()
